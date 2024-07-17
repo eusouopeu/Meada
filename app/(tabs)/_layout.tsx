@@ -1,15 +1,20 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 
+import { styled } from 'nativewind';
+
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+
+const StyledTabs = styled(Tabs)
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
-    <Tabs
+    <StyledTabs
+      className='flex p-[10px] bg-slate-950'
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
@@ -24,6 +29,15 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="library"
+        options={{
+          title: 'Library',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'search' : 'search'} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="explore"
         options={{
           title: 'Explore',
@@ -32,6 +46,6 @@ export default function TabLayout() {
           ),
         }}
       />
-    </Tabs>
+    </StyledTabs>
   );
 }
