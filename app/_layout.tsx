@@ -7,6 +7,13 @@ import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
+import EtapaZero from './(tabs)/StrategicCanvas/EtapaZero';
+import EtapaUm from './(tabs)/StrategicCanvas/EtapaUm';
+import EtapaDois from './(tabs)/StrategicCanvas/EtapaDois';
+import EtapaTres from './(tabs)/StrategicCanvas/EtapaTres';
+import EtapaQuatro from './(tabs)/StrategicCanvas/EtapaQuatro';
+
+
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
@@ -31,6 +38,7 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
+        
       </Stack>
     </ThemeProvider>
   );

@@ -1,30 +1,27 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { PropsWithChildren, useState } from 'react';
-import { StyleSheet, TouchableOpacity, useColorScheme, View } from 'react-native';
+import { useColorScheme } from 'react-native';
+import { StyledLinearGradient, StyledTouchableOpacity  } from '@/constants/StyledComps';
 
-import { LinearGradient } from 'expo-linear-gradient';
-import { styled } from 'nativewind';
-
-import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { ThemedText } from '@/components/ThemedText';
 import { Colors } from '@/constants/Colors';
 
-const StyledLinearGradient = styled(LinearGradient);
 
 export function Collapsible({ children, title }: PropsWithChildren & { title: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const theme = useColorScheme() ?? 'light';
 
   return (
-    <View className='rounded-lg'>
+    <ThemedView className='rounded-lg'>
       <StyledLinearGradient
         colors={['#28CD2E', '#1FB298']}
         locations={[0.1, 1]}
         className='flex flex-col p-[24px] backdrop-blur-xl rounded-lg shadow-xl shadow-slate-950'
       >
         
-      <TouchableOpacity
-        style={styles.heading}
+      <StyledTouchableOpacity
+        className='flex flex-row items-center gap-[6px]'
         onPress={() => setIsOpen((value) => !value)}
         activeOpacity={0.8}>
         <Ionicons
@@ -33,26 +30,10 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
           color={Colors.iconWhite.icon}
         />
         <ThemedText type="subtitle" white className='text-white'>{title}</ThemedText>
-      </TouchableOpacity>
-      {isOpen && <View style={styles.content}>{children}</View>}
+      </StyledTouchableOpacity>
+      {isOpen && <ThemedView className='flex gap-[20px] mt-[20px] ml-[24px] text-white'>{children}</ThemedView>}
 
       </StyledLinearGradient>
-    </View>
+    </ThemedView>
   );
 }
-
-const styles = StyleSheet.create({
-  heading: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 6,
-  },
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 20,
-    marginTop: 20,
-    marginLeft: 24,
-    color: 'white',
-  },
-});
