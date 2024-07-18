@@ -1,6 +1,6 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { PropsWithChildren, useState } from 'react';
-import { StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
+import { StyleSheet, TouchableOpacity, useColorScheme, View } from 'react-native';
 
 import { LinearGradient } from 'expo-linear-gradient';
 import { styled } from 'nativewind';
@@ -16,10 +16,10 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
   const theme = useColorScheme() ?? 'light';
 
   return (
-    <ThemedView className='rounded-lg w-full'>
+    <View className='rounded-lg'>
       <StyledLinearGradient
         colors={['#28CD2E', '#1FB298']}
-        locations={[0.6, 1]}
+        locations={[0.1, 1]}
         className='flex flex-col p-[24px] backdrop-blur-xl rounded-lg shadow-xl shadow-slate-950'
       >
         
@@ -29,15 +29,15 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
         activeOpacity={0.8}>
         <Ionicons
           name={isOpen ? 'chevron-down' : 'chevron-forward-outline'}
-          size={18}
-          color={theme === 'light' ? Colors.light.icon : Colors.dark.icon}
+          size={24}
+          color={Colors.iconWhite.icon}
         />
-        <ThemedText type="subtitle">{title}</ThemedText>
+        <ThemedText type="subtitle" white className='text-white'>{title}</ThemedText>
       </TouchableOpacity>
-      {isOpen && <ThemedView style={styles.content}>{children}</ThemedView>}
+      {isOpen && <View style={styles.content}>{children}</View>}
 
       </StyledLinearGradient>
-    </ThemedView>
+    </View>
   );
 }
 
@@ -48,7 +48,11 @@ const styles = StyleSheet.create({
     gap: 6,
   },
   content: {
-    marginTop: 6,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 20,
+    marginTop: 20,
     marginLeft: 24,
+    color: 'white',
   },
 });

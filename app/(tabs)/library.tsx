@@ -1,102 +1,99 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { StyleSheet, Image, Platform } from 'react-native';
-
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
+// import { Image, StyleSheet, Platform } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { Link } from 'expo-router';
+import { styled } from 'nativewind';
+import { LinearGradient } from 'expo-linear-gradient';
 import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { Collapsible } from '@/components/Collapsible';
 
-export default function TabThreeScreen() {
+
+const StyledScrollView = styled(ScrollView)
+const StyledLinearGradient = styled(LinearGradient)
+const StyledLink = styled(Link)
+
+export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={<Ionicons size={310} name="code-slash" style={styles.headerImage} />}>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Explore</ThemedText>
-      </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
+    <StyledScrollView style={styles.scrollview}>
+    <StyledLinearGradient 
+      colors={['#28CD2E', '#1FB298']}
+      locations={[ 0.1, 0.9 ]}
+      style={styles.background}
+      className='shadow-xl shadow-slate-950'
+    />
+      <StatusBar style='auto' />
+      <View className='flex flex-col gap-[20px] p-[50px]'>
+
+
+      <ThemedText type='title' className='text-slate-100 text-center font-[900]'>Meada</ThemedText>
+
+      <StyledLinearGradient
+        colors={['rgb(248, 250, 252)', 'rgb(203 213 225)']}
+        locations={[0.6, 1]}
+        className='self-start flex flex-col w-full p-[24px] backdrop-blur-xl rounded-lg shadow-xl shadow-slate-950'
+      >
+        <ThemedText type='title' className='text-emerald-400 text-center font-[900]'>Ferramentas</ThemedText>
+      </StyledLinearGradient>
+
+      {/* CARDS */}
+      <Collapsible title='Strategic Canvas'>
+        <ThemedText type='title' className='text-center font-[900]'>Ferramentas</ThemedText>
       </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultBold">w</ThemedText> in the terminal running this project.
-        </ThemedText>
-      </Collapsible>
-      <Collapsible title="Images">
-        <ThemedText>
-          For static images, you can use the <ThemedText type="defaultBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
-        </ThemedText>
-        <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Custom fonts">
-        <ThemedText>
-          Open <ThemedText type="defaultBold">app/_layout.tsx</ThemedText> to see how to load{' '}
-          <ThemedText style={{ fontFamily: 'SpaceMono' }}>
-            custom fonts such as this one.
-          </ThemedText>
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/versions/latest/sdk/font">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user's current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful <ThemedText type="defaultBold">react-native-reanimated</ThemedText> library
-          to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
-      </Collapsible>
-    </ParallaxScrollView>
+      <StyledLinearGradient
+        colors={['rgb(248, 250, 252)', 'rgb(203 213 225)']}
+        locations={[0.6, 1]}
+        className='flex flex-col w-fit p-[24px] backdrop-blur-xl rounded-lg shadow-xl shadow-slate-950'
+      >
+        <ThemedText type='title' className='text-emerald-400 text-center font-[900]'>Ferramentas</ThemedText>
+      </StyledLinearGradient>
+      <StyledLinearGradient
+        colors={['rgb(248, 250, 252)', 'rgb(203 213 225)']}
+        locations={[0.6, 1]}
+        className='flex flex-col w-fit p-[24px] backdrop-blur-xl rounded-lg shadow-xl shadow-slate-950'
+      >
+        <ThemedText type='title' className='text-emerald-400 text-center font-[900]'>Ferramentas</ThemedText>
+      </StyledLinearGradient>
+
+
+      </View>
+    </StyledScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
+  scrollview: {
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: '#FFFFFF',
+  },
+  background: {
     position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    height: 160,
   },
-  titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
-  },
-});
+  typo: {
+    lineHeight: 32,
+    textAlign: 'center'
+  }
+})
+
+// const styles = StyleSheet.create({
+//   titleContainer: {
+//     flexDirection: 'row',
+//     alignItems: 'center',
+//     gap: 8,
+//   },
+//   stepContainer: {
+//     gap: 8,
+//     marginBottom: 8,
+//   },
+//   reactLogo: {
+//     height: 178,
+//     width: 290,
+//     bottom: 0,
+//     left: 0,
+//     position: 'absolute',
+//   },
+// });
