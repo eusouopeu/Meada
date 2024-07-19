@@ -13,17 +13,17 @@ export default function TabFourScreen() {
       headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
       headerImage={<Ionicons size={310} name="code-slash" style={styles.headerImage} />}>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Explore</ThemedText>
+        <ThemedText type="h1">Explore</ThemedText>
       </ThemedView>
       <ThemedText>This app includes example code to help you get started.</ThemedText>
       <Collapsible title="File-based routing">
         <ThemedText>
           This app has two screens:{' '}
-          <ThemedText type="defaultBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultBold">app/(tabs)/explore.tsx</ThemedText>
+          <ThemedText>app/(tabs)/index.tsx</ThemedText> and{' '}
+          <ThemedText>app/(tabs)/explore.tsx</ThemedText>
         </ThemedText>
         <ThemedText>
-          The layout file in <ThemedText type="defaultBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
+          The layout file in <ThemedText>app/(tabs)/_layout.tsx</ThemedText>{' '}
           sets up the tab navigator.
         </ThemedText>
         <ExternalLink href="https://docs.expo.dev/router/introduction">
@@ -33,13 +33,13 @@ export default function TabFourScreen() {
       <Collapsible title="Android, iOS, and web support">
         <ThemedText>
           You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultBold">w</ThemedText> in the terminal running this project.
+          <ThemedText>w</ThemedText> in the terminal running this project.
         </ThemedText>
       </Collapsible>
       <Collapsible title="Images">
         <ThemedText>
-          For static images, you can use the <ThemedText type="defaultBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultBold">@3x</ThemedText> suffixes to provide files for
+          For static images, you can use the <ThemedText>@2x</ThemedText> and{' '}
+          <ThemedText>@3x</ThemedText> suffixes to provide files for
           different screen densities
         </ThemedText>
         <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
@@ -49,7 +49,7 @@ export default function TabFourScreen() {
       </Collapsible>
       <Collapsible title="Custom fonts">
         <ThemedText>
-          Open <ThemedText type="defaultBold">app/_layout.tsx</ThemedText> to see how to load{' '}
+          Open <ThemedText>app/_layout.tsx</ThemedText> to see how to load{' '}
           <ThemedText style={{ fontFamily: 'SpaceMono' }}>
             custom fonts such as this one.
           </ThemedText>
@@ -61,7 +61,7 @@ export default function TabFourScreen() {
       <Collapsible title="Light and dark mode components">
         <ThemedText>
           This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultBold">useColorScheme()</ThemedText> hook lets you inspect
+          <ThemedText>useColorScheme()</ThemedText> hook lets you inspect
           what the user's current color scheme is, and so you can adjust UI colors accordingly.
         </ThemedText>
         <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
@@ -71,14 +71,14 @@ export default function TabFourScreen() {
       <Collapsible title="Animations">
         <ThemedText>
           This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful <ThemedText type="defaultBold">react-native-reanimated</ThemedText> library
+          <ThemedText>components/HelloWave.tsx</ThemedText> component uses
+          the powerful <ThemedText>react-native-reanimated</ThemedText> library
           to create a waving hand animation.
         </ThemedText>
         {Platform.select({
           ios: (
             <ThemedText>
-              The <ThemedText type="defaultBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
+              The <ThemedText>components/ParallaxScrollView.tsx</ThemedText>{' '}
               component provides a parallax effect for the header image.
             </ThemedText>
           ),

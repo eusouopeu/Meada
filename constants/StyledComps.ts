@@ -2,6 +2,7 @@ import { ScrollView, View, Text, FlatList, SectionList, TextInput, Modal, Pressa
 import { styled } from 'nativewind';
 import { Link } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Ionicons } from '@expo/vector-icons';
 
 export const StyledScrollView = styled(ScrollView)
 export const StyledView = styled(View)
@@ -15,3 +16,4 @@ export const StyledFlatList = styled(FlatList)
 export const StyledSectionList = styled(SectionList)
 export const StyledTouchableOpacity = styled(TouchableOpacity)
 export const StyledLinearGradient = styled(LinearGradient)
+export const StyledIonicons = styled(Ionicons)

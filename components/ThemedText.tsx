@@ -1,82 +1,42 @@
-import { Text, type TextProps, StyleSheet } from 'react-native';
-
+import { Text, type TextProps } from 'react-native';
 import { useThemeColor } from '@/hooks/useThemeColor';
-
 import { styled } from 'nativewind';
+import clsx from 'clsx';
+
 
 const StyledText = styled(Text)
+
 
 export type ThemedTextProps = TextProps & {
   lightColor?: string;
   darkColor?: string;
-  type?: 'default' | 'title' | 'defaultBold' | 'subtitle' | 'link';
+  type?: 'h1' | 'h2' | 'h3' | 'p' | 'link';
   className?: string;
-  white?: boolean;
+  heading?: string
 };
-
 export function ThemedText({
+  className,
   style,
   lightColor,
   darkColor,
-  type = 'default',
-  className,
-  white = false,
+  type = 'p',
+  heading,
   ...rest
 }: ThemedTextProps) {
   const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
 
   return (
     <StyledText
-      style={[
-        { color },
-        type === 'title' ? styles.title : undefined,
-        type === 'subtitle' ? styles.subtitle : undefined,
-        type === 'defaultBold' ? styles.defaultBold : undefined,
-        type === 'default' ? styles.default : undefined,
-        type === 'link' ? styles.link : undefined,
-        white ? styles.white : undefined,
-        style,
-      ]}
-      className={className}
+      className={clsx(
+        type === 'h1' && 'bg-transparent text-center text-[32px] leading-tight font-[900]',
+        type === 'h2' && 'bg-transparent text-center text-[24px] leading-tight font-[800]',
+        type === 'h3' && 'bg-transparent text-center text-[20px] font-[700]',
+        type === 'p' && 'bg-transparent text-justify text-[16px]',
+        type === 'link' && 'bg-transparent text-justify text-[16px] text-[#0a7ea4]',
+        className,
+      )}
+      style={[ { color }, style ]}
       {...rest}
     />
   );
 }
-
-const styles = StyleSheet.create({
-  transparent: {
-    backgroundColor: 'transparent',
-  },
-  title: {
-    fontSize: 32,
-    lineHeight: 32,
-    fontWeight: '900',
-    textAlign: 'center',
-    backgroundColor: 'transparent',
-  },
-  subtitle: {
-    fontSize: 24,
-    lineHeight: 28,
-    fontWeight: '800',
-    textAlign: 'center',
-    backgroundColor: 'transparent',
-  },
-  defaultBold: {
-    fontSize: 20,
-    lineHeight: 28,
-    fontWeight: '700',
-  },
-  default: {
-    fontSize: 16,
-    lineHeight: 20,
-    backgroundColor: 'transparent',
-  },
-  link: {
-    fontSize: 16,
-    lineHeight: 24,
-    color: '#0a7ea4',
-  },
-  white: {
-    color: 'white'
-  }
-});

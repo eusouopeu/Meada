@@ -27,7 +27,7 @@ export default function HomeScreen() {
       <View className='flex flex-col gap-[20px] p-[50px] pl-[45px]'>
 
 
-        <ThemedText type='title' className='text-slate-100 text-center font-[900]'>Meada</ThemedText>
+        <ThemedText type='h1' className='text-slate-100 text-center font-[900]'>Meada</ThemedText>
 
         <View>
           <StyledLinearGradient
@@ -35,7 +35,7 @@ export default function HomeScreen() {
             locations={[0.6, 1]}
             className='self-start flex flex-col w-full p-[24px] backdrop-blur-xl rounded-lg shadow-xl shadow-slate-950'
           >
-            <ThemedText type='title' className='text-emerald-400 text-center'>Percurso</ThemedText>
+            <ThemedText type='h1' className='text-emerald-400 text-center'>Percurso</ThemedText>
           </StyledLinearGradient>
         </View>
 
@@ -44,23 +44,23 @@ export default function HomeScreen() {
           <Collapsible title='Strategic Canvas'>
             <StyledLink href={{ pathname: '/[tools]', params: { tools: 'ValoresVisaoeMissao' } }} className='flex flex-row content-baseline'>
               <Ionicons name='reader' size={18} color={'#fff'} />
-              <ThemedText type='defaultBold' white> Valores, Visão e Missão</ThemedText>
+              <ThemedText> Valores, Visão e Missão</ThemedText>
             </StyledLink>
             <StyledLink href={'./'} className='flex flex-row'>
               <Ionicons name='reader' size={20} color={'#fff'} />
-              <ThemedText type='defaultBold' white> Matriz SPOT</ThemedText>
+              <ThemedText> Matriz SPOT</ThemedText>
             </StyledLink>
             <StyledLink href={'./'} className='flex flex-row'>
               <Ionicons name='reader' size={20} color={'#fff'} />
-              <ThemedText type='defaultBold' white> Balanced ScoreCard</ThemedText>
+              <ThemedText> Balanced ScoreCard</ThemedText>
             </StyledLink>
             <StyledLink href={'./'} className='flex flex-row'>
               <Ionicons name='reader' size={20} color={'#fff'} />
-              <ThemedText type='defaultBold' white> OKRs</ThemedText>
+              <ThemedText> OKRs</ThemedText>
             </StyledLink>
             <StyledLink href={'./'} className='flex flex-row items-center'>
               <Ionicons name='reader' size={20} color={'#fff'} />
-              <ThemedText type='defaultBold' white> Monitoramento e Gestão</ThemedText>
+              <ThemedText> Monitoramento e Gestão</ThemedText>
             </StyledLink>
           </Collapsible>
         </View>
@@ -69,14 +69,14 @@ export default function HomeScreen() {
           locations={[0.6, 1]}
           className='flex flex-col w-fit p-[24px] backdrop-blur-xl rounded-lg shadow-xl shadow-slate-950'
         >
-          <ThemedText type='title' className='text-emerald-400 text-center font-[900]'>Ferramentas</ThemedText>
+          <ThemedText type='h1' className='text-emerald-400 text-center font-[900]'>Ferramentas</ThemedText>
         </StyledLinearGradient>
         <StyledLinearGradient
           colors={['rgb(248, 250, 252)', 'rgb(203 213 225)']}
           locations={[0.6, 1]}
           className='flex flex-col w-fit p-[24px] backdrop-blur-xl rounded-lg shadow-xl shadow-slate-950'
         >
-          <ThemedText type='title' className='text-emerald-400 text-center font-[900]'>Ferramentas</ThemedText>
+          <ThemedText type='h1' className='text-emerald-400 text-center font-[900]'>Ferramentas</ThemedText>
         </StyledLinearGradient>
 
 

@@ -1,5 +1,4 @@
-import { StyledTouchableOpacity } from '@/constants/StyledComps'
-import { Ionicons } from '@expo/vector-icons'
+import { StyledTouchableOpacity, StyledIonicons } from '@/constants/StyledComps'
 import { useThemeColor } from '@/hooks/useThemeColor'
 import { Colors } from '@/constants/Colors'
 import { useNavigation } from 'expo-router'
@@ -25,7 +24,7 @@ export function Backward({
 
   return (
     <StyledTouchableOpacity onPress={destination} className={className}>
-      <Ionicons
+      <StyledIonicons
         name='chevron-back'
         size={24}
         color={color}
@@ -43,8 +42,8 @@ export function Forward({
 
   return (
     <StyledTouchableOpacity onPress={onPress} className={className}>
-      <Ionicons
-        name='chevron-back'
+      <StyledIonicons
+        name='chevron-forward'
         size={24}
         color={color}
       />

@@ -6,6 +6,7 @@ import { styled } from 'nativewind';
 import { LinearGradient } from 'expo-linear-gradient';
 import { ThemedText } from '@/components/ThemedText';
 import { Collapsible } from '@/components/Collapsible';
+import Header from '@/components/Header';
 
 
 const StyledScrollView = styled(ScrollView)
@@ -24,34 +25,25 @@ export default function HomeScreen() {
       <StatusBar style='auto' />
       <View className='flex flex-col gap-[20px] p-[50px]'>
 
-
-      <ThemedText type='title' className='text-slate-100 text-center font-[900]'>Meada</ThemedText>
-
-      <StyledLinearGradient
-        colors={['rgb(248, 250, 252)', 'rgb(203 213 225)']}
-        locations={[0.6, 1]}
-        className='self-start flex flex-col w-full p-[24px] backdrop-blur-xl rounded-lg shadow-xl shadow-slate-950'
-      >
-        <ThemedText type='title' className='text-emerald-400 text-center font-[900]'>Ferramentas</ThemedText>
-      </StyledLinearGradient>
+        <Header title='Ferramentas'/>
 
       {/* CARDS */}
       <Collapsible title='Strategic Canvas'>
-        <ThemedText type='title' className='text-center font-[900]'>Ferramentas</ThemedText>
+        <ThemedText type='h1' className='text-center font-[900]'>Ferramentas</ThemedText>
       </Collapsible>
       <StyledLinearGradient
         colors={['rgb(248, 250, 252)', 'rgb(203 213 225)']}
         locations={[0.6, 1]}
         className='flex flex-col w-fit p-[24px] backdrop-blur-xl rounded-lg shadow-xl shadow-slate-950'
       >
-        <ThemedText type='title' className='text-emerald-400 text-center font-[900]'>Ferramentas</ThemedText>
+        <ThemedText type='h1' className='text-emerald-400 text-center font-[900]'>Ferramentas</ThemedText>
       </StyledLinearGradient>
       <StyledLinearGradient
         colors={['rgb(248, 250, 252)', 'rgb(203 213 225)']}
         locations={[0.6, 1]}
         className='flex flex-col w-fit p-[24px] backdrop-blur-xl rounded-lg shadow-xl shadow-slate-950'
       >
-        <ThemedText type='title' className='text-emerald-400 text-center font-[900]'>Ferramentas</ThemedText>
+        <ThemedText type='h1' className='text-emerald-400 text-center font-[900]'>Ferramentas</ThemedText>
       </StyledLinearGradient>
 
 
